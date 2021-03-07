@@ -21,9 +21,6 @@ def print_list(items):
         print(i)
 
 
-print_list([1, 2, 6, 3, 9])
-
-
 def long_words(words):
     """Return words in input list that longer than 4 characters.
     
@@ -48,7 +45,6 @@ def long_words(words):
             word_list.append(i)
     return word_list
 
-long_words(["hello", "a", "b", "hi", "bacon", "bacon"])
 
 def n_long_words(words, n):
     """Return words in list longer than `n` characters.
@@ -68,8 +64,6 @@ def n_long_words(words, n):
         if len(i)>n:
             word_list.append(i)
     return word_list
-
-n_long_words(["I", "like", "apples", "bananas", "you"], 5)
 
 def smallest_int(numbers):
     """Find the smallest integer in a list of integers and return it.
@@ -270,7 +264,6 @@ def join_strings_with_comma(words):
     return y
 
 
-
 def reverse_list(items):
     """Return the input list, reversed.
     **Do not use** the python function `reversed()` or the method
@@ -294,7 +287,6 @@ def reverse_list(items):
 
     return items[::-1]
 
-orig = [1,2,3]
 def reverse_list_in_place(items):
     """Reverse the input list `in place`.
     Reverse the input list given, but do it "in place" --- that is,
@@ -314,14 +306,10 @@ def reverse_list_in_place(items):
         >>> orig
         ['I', 'love', 'cookies']
     """
-    for i in items:
-        items.reverse()
-    return items
-
-print(reverse_list_in_place(orig))
-
-
-
+    for i in range(len(items) // 2):
+        temp = items[i]
+        items[i] = items[(i+1) * -1]
+        items[(i + 1) * -1] = temp
 
 
 
@@ -357,7 +345,6 @@ def duplicates(items):
                 dupes.append(i)
     return sorted(dupes) 
 
-print(duplicates(["apple", "banana", "banana", "cherry", "apple"]))
 
 def find_letter_indices(words, letter):
     """Return list of indices where letter appears in each word.
@@ -391,8 +378,7 @@ def find_letter_indices(words, letter):
             lst.append(None)
     return lst
 
-print(find_letter_indices(['odd', 'dog', 'who'], 'o'))#[0,1,2]
-print(find_letter_indices(['odd', 'dog', 'who', 'jumps'], 'o')) #[0, 1, 2, None])
+
 #####################################################################
 # END OF PRACTICE: You can ignore everything below.
 
